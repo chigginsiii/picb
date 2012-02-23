@@ -1,4 +1,0 @@
-package POE::Component::Term::Chat::EditWindow;
-
-use strict;
-use base 'POE::Component::Term::Chat::Window';

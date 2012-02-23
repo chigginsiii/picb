@@ -1,7 +1,0 @@
-package POE::Component::Term::Chat;
-
-use strict;
-use Curses;
-use POE qw(Wheel::Curses Filter::Line Wheel::ReadWrite);
-
-$|+;
