@@ -1,0 +1,28 @@
+package POE::Component::Term::Chat::OutputWindow;
+
+use strict;
+use base qw(POE::Component::Term::Chat::Window);
+
+sub new {
+    my $class = shift;
+    return $class->new(
+	Name => '',
+    );
+}
+
+sub init {
+    # load init args
+    foreach my $key ( keys qw(
+				 Format Window Height Width Palette
+
+			 ) )
+    {
+	$self->{$key} = delete $opts{$key};
+    }
+    $self->{Color} = (delete $opts{DefaultColor} || 'ncolor');
+
+    if ( my @leftovers = keys %opts ) {
+	warn "Unrecognized constructor: '$_' => '$opts{$_}'" foreach @leftovers;
+    }
+
+}

@@ -1,0 +1,5 @@
+#!/usr/bin/perl
+
+use strict;
+use lib qw(../lib);
+use POE::Component::Term::Chatscreen;
