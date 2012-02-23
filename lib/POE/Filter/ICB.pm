@@ -130,9 +130,14 @@ sub clone {
 sub log_to_file {
     my ($self,$msg) = @_;
     my $log_file = "./log_file";
-    open(FH,">>log_file") || die "Could not open log file ($log_file): $!";
-    print FH "$msg\n";
-    close(FH);
+    #open(FH,">>log_file") || die "Could not open log file ($log_file): $!";
+    #print FH "$msg\n";
+    #close(FH);
+    #
+    # for now, STDERR will do...
+    #
+    $msg =~ s/\001/\^A/g;
+    print STDERR "$msg\n";
 }
 
 1;
